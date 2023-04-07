@@ -8,6 +8,7 @@ LICENSE file in the root directory of this source tree.'''
 
 import PyPDF2
 import tkinter as tk
+from tkinter import Tk, PhotoImage
 from tkinter import ttk
 from tkinter import simpledialog
 from tkinter.filedialog import askopenfilename
@@ -124,7 +125,23 @@ root = tk.Tk()
 root.geometry("425x225")
 
 root.title("PDF Extractor: Extract pages based on keyword")
-root.iconbitmap(r'C:\Users\vice4\Desktop\NH_logo.ico')
+
+## Retrieve Icon
+# Get the absolute path of the script
+script_path = os.path.abspath(__file__)
+
+# Get the directory containing the script
+script_dir = os.path.dirname(script_path)
+
+# Change the current working directory to the script directory
+os.chdir(script_dir)
+
+# Open the file using a relative path
+with open("icondata.txt","rb") as f:
+    icondata = f.read()
+
+icon = PhotoImage(data=icondata)
+root.iconphoto(True, icon)
 
 frame = tk.Frame(root)
 frame.pack(pady=10)
