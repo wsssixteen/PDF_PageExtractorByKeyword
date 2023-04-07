@@ -8,7 +8,9 @@ A program with UI to extract PDF pages that contains keyword entered by the user
 Build the source code into an executable windows program using pyinstaller.
 
 1) Install pyinstall using 'pip install pyinstaller'
-2) Compile the code using 'pyinstaller --onefile --windowed myscript.py'
+2) Compile the code using 'pyinstaller --onefile --windowed --add-data "icondata.txt;." PDF_PageExtractorByKeyword.py'
+
+*Self-note: Could add '--icon=<executable_icon>.ico' to add your own icon for your executable program.
 
 
 # License 
